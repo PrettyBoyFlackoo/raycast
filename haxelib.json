@@ -1,0 +1,13 @@
+{
+    "name": "raycast",
+    "url": "https://github.com/ArmoryBlender/Raycast",
+    "license": "MIT",
+    "tags": [],
+    "description": "Raycasting for the Heaps io game engine",
+    "version": "0.0.1",
+    "releasenote": "Initial release",
+    "contributors": ["ArmoryBlender"],
+    "dependencies": {
+      "heaps": ""
+    }
+  }
