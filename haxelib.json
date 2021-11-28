@@ -2,7 +2,7 @@
     "name": "raycast",
     "url": "https://github.com/PrettyBoyFlackoo/Raycast",
     "license": "MIT",
-    "tags": [],
+    "tags": ["game", "haxe", "collision"],
     "description": "Raycasting for the Heaps io game engine",
     "version": "1.0.0",
     "releasenote": "Initial release",
