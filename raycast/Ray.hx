@@ -47,7 +47,7 @@ class Ray {
             if (i != null) hits.push(i);
         }
 
-        if (hits.length != 0) {
+        if (hits.length > 0) {
             var nearestPoint0 = hits[0].distance(vFrom);
             var nearestPoint1 = hits[1].distance(vFrom);
     
