@@ -30,6 +30,36 @@ class Ray {
         g.lineTo(vTo.x, vTo.y);
         g.endFill();
     }
+    
+    public function isIntersectingWithBounds(bounds:RayBounds):Point { ///WIP - using very basic idea for now
+        var hit:Point = null;
+        
+        var _i1 = isIntersecting(bounds.rays[0]);
+        var _i2 = isIntersecting(bounds.rays[1]);
+        var _i3 = isIntersecting(bounds.rays[2]);
+        var _i4 = isIntersecting(bounds.rays[3]);
+
+
+        var intersectedPoints = [_i1, _i2, _i3, _i4];
+        var hits = [];
+
+        for (i in intersectedPoints) {
+            if (i != null) hits.push(i);
+        }
+
+        if (hits.length != 0) {
+            var nearestPoint0 = hits[0].distance(vFrom);
+            var nearestPoint1 = hits[1].distance(vFrom);
+    
+            if (nearestPoint0 < nearestPoint1) {
+                hit = hits[0];
+            } else {
+                hit = hits[1];
+            }
+        }
+
+        return hit;
+    }
 
     public function isIntersecting(other:Ray) {
         var x1 = other.line.p1.x;
