@@ -63,6 +63,14 @@ function drawCircle(x, y, parent) {
  ![Unbenannt Kopie](https://user-images.githubusercontent.com/48133099/143768413-43219c36-8f9f-45d8-9196-0289ce9c9e9b.png)
  
  
+ # Recent Updates
+ 
+ In the last update you can cast a ray trough a bound of rays to get the intersection point.
+ 
+ 
+ 
+ 
+ 
  Get from https://lib.haxe.org/p/raycast/
 
  
