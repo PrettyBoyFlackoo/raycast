@@ -74,8 +74,24 @@ It is not perfectly done because it doesn't calculate the point with math, inste
 # Layer Masks
 It is now possible to set a custom layer mask. You can now set a different layer mask to a ray and it only checks for the rays that are in the same layer mask. This can be used for collision detection in games for example.
 
+```haxe
+override function init() {
+    var debug:Debug = {
+        parent: s2d,
+        color: 0xFF0000
+    }
 
- 
- 
+    var myLayerMask:Int = 2;
+
+    var ray0 = new Ray(32, 48, 128, 128, myLayerMask, debug);
+    var box = new RayBounds(64, 64, 32, 48, myLayerMask, debug);
+
+    var hit = ray0.isIntersectingWithBounds(box);
+
+    if (hit != null) {
+        drawCircle(hit.x, hit.y);
+    }
+}
+```
  
  Get from https://lib.haxe.org/p/raycast/
