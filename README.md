@@ -67,10 +67,15 @@ function drawCircle(x, y, parent) {
  
  In the last update you can cast a ray trough a bound of rays to get the intersection point.
  
- 
+ ![Unbenannt](https://user-images.githubusercontent.com/95177386/144710405-656831a6-9c09-47b1-98a5-52ecce804ac3.PNG)
+
+It is not perfectly done because it doesn't calculate the point with math, instead it checks which of the intersecting points are the nearest and eventually returns it. This could lead to some issues!
+
+# Layer Masks
+It is now possible to set a custom layer mask. You can now set a different layer mask to a ray and it only checks for the rays that are in the same layer mask. This can be used for collision detection in games for example.
+
+
  
  
  
  Get from https://lib.haxe.org/p/raycast/
-
- 
