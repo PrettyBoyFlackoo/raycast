@@ -72,7 +72,7 @@ function drawCircle(x, y, parent) {
 It is not perfectly done because it doesn't calculate the point with math, instead it checks which of the intersecting points are the nearest and eventually returns it. This could lead to some issues!
 
 # Layer Masks
-It is now possible to set a custom layer mask. You can now set a different layer mask to a ray and it only checks for the rays that are in the same layer mask. This can be used for collision detection in games for example.
+It is now possible to set a custom layer mask. You can now set a different layer mask to a ray and it only checks for the rays that are in the same layer mask. This can be used for collision detection in games for example. On default it's set on 0.
 
 ```haxe
 override function init() {
