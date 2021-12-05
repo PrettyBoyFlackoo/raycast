@@ -2,15 +2,14 @@ package raycast;
 
 
 import h2d.Graphics;
-import h2d.col.Point;
-import h2d.col.Line;
 import h2d.Scene;
+import raycast.data.*;
 
 class Ray {
 
     public var line:Line;
-    public var vFrom = new Point();
-    public var vTo = new Point();
+    public var vFrom = new Vector();
+    public var vTo = new Vector();
     public var layerMask:Int;
 
     var g:Graphics;
@@ -73,10 +72,10 @@ class Ray {
     public function isIntersecting(other:Ray) {
         if (this.layerMask != other.layerMask) return null;
 
-        var x1 = other.line.p1.x;
-        var y1 = other.line.p1.y;
-        var x2 = other.line.p2.x;
-        var y2 = other.line.p2.y;
+        var x1 = other.line.from.x;
+        var y1 = other.line.from.y;
+        var x2 = other.line.to.x;
+        var y2 = other.line.to.y;
 
         var x3 = vFrom.x;
         var y3 = vFrom.y;
@@ -91,7 +90,7 @@ class Ray {
         var u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
 
         if (t > 0 && t < 1 && u > 0) {
-            var pt = new Point();
+            var pt = new Vector();
             pt.x = x1 + t * (x2 - x1);
             pt.y = y1 + t * (y2 - y1);
 
