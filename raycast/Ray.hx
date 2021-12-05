@@ -34,10 +34,10 @@ class Ray {
         g.endFill();
     }
     
-    public function isIntersectingWithBounds(bounds:RayBounds):Point { ///WIP - using very basic idea for now
+    public function isIntersectingWithBounds(bounds:RayBounds):Vector { ///WIP - using very basic idea for now
         if (this.layerMask != bounds.layerMask) return null;
         
-        var hit:Point = null;
+        var hit:Vector = null;
         
         var _i1 = isIntersecting(bounds.rays[0]);
         var _i2 = isIntersecting(bounds.rays[1]);
