@@ -1,6 +1,5 @@
 package raycast;
 
-
 import h2d.Graphics;
 import h2d.Scene;
 import raycast.data.*;
