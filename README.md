@@ -1,5 +1,5 @@
 # Raycast
-Raycasting for the Heaps io game engine. 
+Raycasting Tool for any game engines. Best use for Heaps.io
 
 # Usage
 
