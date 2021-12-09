@@ -93,5 +93,28 @@ override function init() {
     }
 }
 ```
+
+# Circle Intersection
+You can get the intersections points from a circle
+
+```haxe
+override function init() {
+    var debug:Debug = {
+        parent: s2d,
+        color: 0xFF0000 
+    }
+
+   var ray0 = new Ray(32, 32, 100, 150, debug);
+   var circle = new Circle(64, 64, 20, debug);
+        
+   var hit = ray0.isIntersectingWithCircle(circle);
+    
+   if (hit != null) {
+       for (i in hit) {
+           drawCircle(i.x, i.y);
+       }
+   }
+}
+```
  
  Get from https://lib.haxe.org/p/raycast/
