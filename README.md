@@ -2,6 +2,7 @@
 Raycasting Tool for any game engines. Best use for Heaps.io
 
 # Usage
+To shoot a simple ray you can just add a new ray and give the starting position and a ending position
 
 ```haxe
 package;
@@ -17,6 +18,7 @@ class Main extends hxd.App {
        var ray0 = new Ray(32, 32, 64, 64);
        var ray1 = new Ray(32, 48, 96, 12);
 
+       ///ray 0 checks if intersecting with ray 1
        var hit = ray0.isIntersecting(ray1);
 
        if (hit != null) {
@@ -27,7 +29,7 @@ class Main extends hxd.App {
 
 # Visualize
 
-If there is an intersecting point between the given 2 rays then it will return a point that contains x and y coordinates otherwise you get null. Additionally You can set a debug mode in the ray constructer to visualize the rays.
+If there is an intersecting point between the given 2 rays then it will return a point that contains x and y coordinates otherwise you get null. Additionally You can set a debug mode in the ray constructer to visualize the rays. The Debug Mode is only working for the Heaps.io game engine.
 
 ```haxe
  var ray0 = new Ray(32, 32, 64, 64, {parent: s2d, color: 0xFF0000});
@@ -63,16 +65,20 @@ function drawCircle(x, y, parent) {
  ![Unbenannt Kopie](https://user-images.githubusercontent.com/48133099/143768413-43219c36-8f9f-45d8-9196-0289ce9c9e9b.png)
  
  
- # Recent Updates
+ ## Different Shapes
  
- In the last update you can cast a ray trough a bound of rays to get the intersection point.
+ In the latest updates you can check intersection points for different shapes like ray(line), box and circle!
  
+# Box
 ![Unbenannt](https://user-images.githubusercontent.com/95177386/145473467-1c3c2583-4967-44b2-99fd-e9dc5b02aba4.PNG)
 
 It is not perfectly done because it doesn't calculate the point with math, instead it checks which of the intersecting points are the nearest and eventually returns it. This could lead to some issues!
 
-# Layer Masks
-It is now possible to set a custom layer mask. You can now set a different layer mask to a ray and it only checks for the rays that are in the same layer mask. This can be used for collision detection in games for example. On default it's set on 0.
+![Unbenannt](https://user-images.githubusercontent.com/95177386/145473129-a6cf3d70-6369-4402-afc7-24ec0f670a04.PNG)
+
+
+## Layer Masks
+It is now also possible to set a custom layer mask. You can now set a different layer mask to a ray and it only checks for the rays that are in the same layer mask. This can be used for collision detection in games for example. On default it's set on 0.
 
 ```haxe
 override function init() {
@@ -94,30 +100,4 @@ override function init() {
 }
 ```
 
-# Circle Intersection
-You can get the intersections points from a circle
-
-```haxe
-override function init() {
-    var debug:Debug = {
-        parent: s2d,
-        color: 0xFF0000 
-    }
-
-   var ray0 = new Ray(32, 32, 100, 150, debug);
-   var circle = new Circle(64, 64, 20, debug);
-        
-   var hit = ray0.isIntersectingWithCircle(circle);
-    
-   if (hit != null) {
-       for (i in hit) {
-           drawCircle(i.x, i.y);
-       }
-   }
-}
-```
-
-![Unbenannt](https://user-images.githubusercontent.com/95177386/145473129-a6cf3d70-6369-4402-afc7-24ec0f670a04.PNG)
-
- 
  Get from https://lib.haxe.org/p/raycast/
