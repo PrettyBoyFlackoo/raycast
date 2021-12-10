@@ -59,6 +59,7 @@ override function init() {
     }
 }
 
+///Works for Heaps.io
 function drawCircle(x, y) {
     var g = new Graphics(s2d);
     g.beginFill(0xFFFFFF);
