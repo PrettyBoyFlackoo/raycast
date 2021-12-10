@@ -82,6 +82,26 @@ function drawCircle(x, y) {
 ## Box
 ![Unbenannt](https://user-images.githubusercontent.com/95177386/145473467-1c3c2583-4967-44b2-99fd-e9dc5b02aba4.PNG)
 
+```haxe
+override function init() {
+    var debug:Debug = {
+        parent: s2d,
+        color: 0xFF0000 
+    }
+
+   var ray0 = new Ray(32, 32, 100, 100, debug);
+   var box = new Box(32, 48, 64, 32, debug);
+
+   var hit = ray0.isIntersectingWithBounds(box);
+
+   if (hit != null) {
+       for (p in hit) {
+        drawCircle(p.x, p.y);
+       }
+   }
+}
+```
+
 It is not perfectly done because it doesn't calculate the point with math, instead it checks which of the intersecting points are the nearest and eventually returns it. This could lead to some issues!
 
 ![Unbenannt](https://user-images.githubusercontent.com/95177386/145473129-a6cf3d70-6369-4402-afc7-24ec0f670a04.PNG)
