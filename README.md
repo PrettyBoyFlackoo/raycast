@@ -105,9 +105,27 @@ override function init() {
 It is not perfectly done because it doesn't calculate the point with math, instead it checks which of the intersecting points are the nearest and eventually returns it. This could lead to some issues!
 
 ## Circle
-![Unbenannt](https://user-images.githubusercontent.com/95177386/145473129-a6cf3d70-6369-4402-afc7-24ec0f670a04.PNG)
+![Unbenannt Kopie](https://user-images.githubusercontent.com/95177386/145609890-f593b0c4-0fb6-43c2-9d82-741ba1b7ded1.png)
 
+```haxe
+override function init() {
+    var debug:Debug = {
+        parent: s2d,
+        color: 0xFF0000 
+    }
 
+   var ray0 = new Ray(32, 32, 100, 125, debug);
+   var circle = new Circle(64, 64, 20, debug);
+
+   var hit = ray0.isIntersectingWithCircle(circle);
+
+   if (hit != null) {
+       for (p in hit) {
+        drawCircle(p.x, p.y);
+       }
+   }
+}
+```
 
 
 ## Layer Masks
