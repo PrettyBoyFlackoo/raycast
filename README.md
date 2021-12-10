@@ -32,32 +32,27 @@ class Main extends hxd.App {
 If there is an intersecting point between the given 2 rays then it will return a point that contains x and y coordinates otherwise you get null. Additionally You can set a debug mode in the ray constructer to visualize the rays. The Debug Mode is only working for the Heaps.io game engine.
 
 ```haxe
- var ray0 = new Ray(32, 32, 64, 64, {parent: s2d, color: 0xFF0000});
- var ray1 = new Ray(32, 48, 96, 12, {parent: s2d, color: 0xFF0000});
+ var ray0 = new Ray(32, 32, 64, 64);
+ var ray1 = new Ray(32, 48, 96, 12);
 ```
 To visualize the intersecting point we can create a function that draws a circle at the given function paramter position. We pass our hit point coordinates into the function.
 
 ```haxe
 override function init() {
-   var ray0 = new Ray(32, 32, 64, 64, {parent: s2d, color: 0xFF0000});
-   var ray1 = new Ray(32, 48, 96, 12, {parent: s2d, color: 0xFF0000});
+    var debug:Debug = {
+        parent: s2d,
+        color: 0xFF0000 
+    }
 
-   var hit = ray0.isIntersecting(ray1);
+    var ray0 = new Ray(32, 32, 64, 64, debug);
+    var ray1 = new Ray(32, 48, 96, 12, debug);
 
-   if (hit != null) {
-       trace("Your intersection point is: " + hit);
+    var hit = ray0.isIntersecting(ray1);
 
-       drawCircle(hit.x, hit.y, s2d);
-   }
+    if (hit != null) {
+       drawCircle(hit.x, hit.y); ///Draws a circle at given point
+    }
 }
-
-function drawCircle(x, y, parent) {
-    var g = new Graphics(parent);
-        
-    g.beginFill(0xFFFFFF);
-    g.drawCircle(x, y, 4, 12);
-    g.endFill();
- }
  ```
  
  ## Results
