@@ -32,8 +32,13 @@ class Main extends hxd.App {
 If there is an intersecting point between the given 2 rays then it will return a point that contains x and y coordinates otherwise you get null. Additionally You can set a debug mode in the ray constructer to visualize the rays. The Debug Mode is only working for the Heaps.io game engine.
 
 ```haxe
- var ray0 = new Ray(32, 32, 64, 64);
- var ray1 = new Ray(32, 48, 96, 12);
+var debug = {
+    parent: s2d,
+    color: 0xFF0000
+}
+
+ var ray0 = new Ray(32, 32, 64, 64, debug);
+ var ray1 = new Ray(32, 48, 96, 12, debug);
 ```
 To visualize the intersecting point we can create a function that draws a circle at the given function paramter position. We pass our hit point coordinates into the function.
 
