@@ -58,6 +58,13 @@ override function init() {
        drawCircle(hit.x, hit.y); ///Draws a circle at given point
     }
 }
+
+function drawCircle(x, y) {
+    var g = new Graphics(s2d);
+    g.beginFill(0xFFFFFF);
+    g.drawCircle(x, y, 4, 12);
+    g.endFill();
+}
  ```
  
  ## Results
