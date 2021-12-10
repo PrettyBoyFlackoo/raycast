@@ -67,7 +67,6 @@ function drawCircle(x, y, parent) {
  
  
  
- 
  # Different Shapes
  
  In the latest updates you can check intersection points for different shapes like ray(line), box and circle!
