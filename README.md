@@ -1,7 +1,7 @@
 # Raycast
 Raycasting Tool for any game engines. Best use for Heaps.io
 
-# Usage
+## Usage
 To shoot a simple ray you can just add a new ray and give the starting position and a ending position
 
 ```haxe
@@ -27,7 +27,7 @@ class Main extends hxd.App {
     }
 ```
 
-# Visualize
+## Visualize
 
 If there is an intersecting point between the given 2 rays then it will return a point that contains x and y coordinates otherwise you get null. Additionally You can set a debug mode in the ray constructer to visualize the rays. The Debug Mode is only working for the Heaps.io game engine.
 
@@ -60,16 +60,16 @@ function drawCircle(x, y, parent) {
  }
  ```
  
- # Results
+ ## Results
  
  ![Unbenannt Kopie](https://user-images.githubusercontent.com/48133099/143768413-43219c36-8f9f-45d8-9196-0289ce9c9e9b.png)
  
  
- ## Different Shapes
+ # Different Shapes
  
  In the latest updates you can check intersection points for different shapes like ray(line), box and circle!
  
-# Box
+## Box
 ![Unbenannt](https://user-images.githubusercontent.com/95177386/145473467-1c3c2583-4967-44b2-99fd-e9dc5b02aba4.PNG)
 
 It is not perfectly done because it doesn't calculate the point with math, instead it checks which of the intersecting points are the nearest and eventually returns it. This could lead to some issues!
